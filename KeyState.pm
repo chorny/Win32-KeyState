@@ -1,5 +1,10 @@
 package Win32::KeyState;
 
+use 5.006;
+use strict;
+use warnings;
+our $VERSION = '0.01';
+
 require Exporter;
 our @ISA = qw(Exporter);
 
@@ -14,11 +19,7 @@ our %EXPORT_TAGS = (
 
 Exporter::export_ok_tags('all');
 
-our $VERSION = '0.01';
 
-use 5.006;
-use strict;
-use warnings;
 use Win32::API 0.41;
 
 #Win32::API->Import('user32', 'int GetKeyState(int nVirtKey)');
@@ -58,7 +59,7 @@ Win32::KeyState - Get the status of "virtual" keys
 
   print 'CapsLock is ', GetCapsLock() ? 'On' : 'Off', "\n";
   print "Shift key is depressed\n" if (GetKeyState(0x10) & 1);
-  
+
 =head1 DESCRIPTION
 
 These functions utilizes L<Win32::API> to allow one to get the status of the CapsLock, NumLock and ScrollLock keys.
