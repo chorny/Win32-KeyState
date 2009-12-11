@@ -3,6 +3,7 @@ KeyState.pm
 Makefile.PL
 MANIFEST
 README
-test.pl
+t/test.t
+manualtest.pl
 keystates.pl
 virtkeys.txt
